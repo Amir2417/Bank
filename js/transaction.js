@@ -1,8 +1,11 @@
 document.getElementById('depoBtn').addEventListener('click',function(){
     const inputValue = document.getElementById('deposit-amount');
-    const newValue = inputValue.value;
-
+    const newValue = parseFloat(inputValue.value);
+    
     const depoText = document.getElementById('depoAmount');
-    const totalValue = depoText.innerText + newValue;
+    const previousValue = parseFloat(depoText.innerText);
+    const totalValue = previousValue + newValue;
     depoText.innerText = totalValue;
+    inputValue.value ='';
+
 });
